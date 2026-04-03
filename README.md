@@ -189,21 +189,34 @@ Full interactive documentation is available via Swagger UI. Below is the endpoin
 
 ---
 
-## 🧠 Engineering Assumptions & Decisions
+## 🎨 Technical Decisions and Trade-offs
 
-1. **Pure-JS SQLite Hub**: Chose `sql.js` to eliminate native build tool friction, ensuring immediate "clone-and-run" capability across any OS.
-2. **Soft-Delete Architecture**: Implemented `is_deleted` flags to ensure data integrity and auditability—nothing is truly lost in a financial context.
-3. **Financial Signage**: Amounts are stored as raw values (positive=income) with the UI handling context-aware absolute formatting.
-4. **Automated Engagement**: System-driven notifications are triggered by state changes (status updates, transaction edits) to keep users informed.
-5. **Session Longevity**: JWTs are configured for a 7-day lifecycle with automatic 401 interceptors for seamless UX.
+### 💾 Zero-Dependency SQLite Engine (sql.js)
+I opted for `sql.js` (Pure-JS SQLite) over native drivers like `better-sqlite3`.
+- **Decision**: Ensures a lightning-fast "clone-and-run" experience across any OS without requiring C++ build tools.
+- **Trade-off**: While native drivers offer slightly higher raw throughput, `sql.js` provides superior **portability** for cloud environments like Render, which is critical for a smooth evaluation process.
+
+### 🛡️ Backend-Driven RBAC (Security Architecture)
+Security is implemented at the **API Middleware level**, not just the UI.
+- **Decision**: Every request is validated against a JWT role before reaching the controller.
+- **Trade-off**: This adds a layer of complexity to the route definitions but ensures **bulletproof data integrity**. Even a direct API call from Postman cannot bypass the permission hierarchy.
+
+### 📜 Strategic Soft-Deletion & Audit Trails
+- **Decision**: Transactions use `is_deleted` flags rather than hard-deletes.
+- **Reasoning**: In financial systems, data history is vital. This approach preserves the **Audit Trail** (tracking WHOM, WHEN, and HOW) while keeping the UI clean, matching enterprise-grade compliance standards.
 
 ---
 
-## 📊 Future Roadmap
-- [ ] **Multi-Currency Support**: Real-time FX conversion for international transactions.
-- [ ] **AI Forecasting**: Predictive analytics for future spending patterns.
-- [ ] **PDF Exporting**: One-click generation of professional financial reports.
-- [ ] **Third-party Integrations**: Stripe/PayPal API connectors for automated importing.
+## 📝 Additional Context
+
+### 🚀 Enterprise Observability
+Beyond the core requirements, I implemented a full **Audit Logging system** that captures every mutating action (Create/Update/Delete) with user metadata and IP tracking. This demonstrates a focus on system transparency and accountability.
+
+### 📚 Developer-First API Ecosystem
+I integrated a live **OpenAPI 3.0 (Swagger)** dashboard. By providing an interactive UI for testing every endpoint, I’ve ensured the project is self-documenting and ready for team collaboration from day one.
+
+### 🌍 Cloud-Optimized Deployment
+The project is fully container-ready and deployed across **Render** and **Vercel**. I implemented dynamic **CORS policies** and environment-aware **API routing** to ensure the production build is secure and production-ready.
 
 ---
 
