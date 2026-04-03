@@ -74,7 +74,7 @@ export default function Transactions() {
     if (searchParams.get('new') === '1' && isAnalyst) {
       setModal({ open: true, tx: null });
     }
-  }, []);
+  }, [isAnalyst, searchParams]);
 
   const load = useCallback(async (page = 1) => {
     setLoading(true);

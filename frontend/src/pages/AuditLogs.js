@@ -9,7 +9,6 @@ const actionColors = { CREATE: 'success', UPDATE: 'info', DELETE: 'error' };
 export default function AuditLogs() {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
 
   const load = async (p = 1) => {
@@ -18,7 +17,6 @@ export default function AuditLogs() {
       const res = await api.get('/audit-logs', { params: { page: p, limit: 30 } });
       setLogs(res.data?.logs || []);
       setTotal(res.data?.pagination?.total || 0);
-      setPage(p);
     } catch {} finally { setLoading(false); }
   };
 
