@@ -2,6 +2,19 @@
 
 ---
 
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)](https://jwt.io/)
+[![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://swagger.io/)
+
+### *Precision Finance. Real-time Analytics. Bulletproof Security.*
+
+FinFlow is a high-performance, full-stack financial management platform designed for modern business intelligence. It bridges the gap between complex financial data and actionable insights through a secure, role-based ecosystem.
+
+
+---
+
 ## 📸 Visual Showcase
 
 ### 1. Unified Finance Dashboard
@@ -20,17 +33,6 @@
 ![API Docs](./screenshot/Screenshot_3-4-2026_213044_localhost.jpeg)
 *Live OpenAPI 3.0 documentation providing a developer-first experience for system integration.*
 
----
-
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
-[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)](https://jwt.io/)
-[![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://swagger.io/)
-
-### *Precision Finance. Real-time Analytics. Bulletproof Security.*
-
-FinFlow is a high-performance, full-stack financial management platform designed for modern business intelligence. It bridges the gap between complex financial data and actionable insights through a secure, role-based ecosystem.
 
 ---
 
