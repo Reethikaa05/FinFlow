@@ -6,7 +6,10 @@ const swaggerSpec = {
     description: '## Finance Data Processing and Access Control Backend\n\nA complete backend for managing financial records with role-based access control.\n\n### Roles\n- **Admin** – Full access: manage users, transactions, categories\n- **Analyst** – Read all + create/update transactions  \n- **Viewer** – Read-only access to own data\n\n### Test Accounts\n| Role | Email | Password |\n|------|-------|----------|\n| Admin | admin@finflow.com | admin123 |\n| Analyst | sarah@finflow.com | password123 |\n| Viewer | john@finflow.com | password123 |',
     contact: { name: 'FinFlow Support' }
   },
-  servers: [{ url: 'http://localhost:3001/api', description: 'Local Development' }],
+  servers: [
+    { url: '/api', description: 'Current Environment (Auto-select)' },
+    { url: 'http://localhost:3001/api', description: 'Local Development' }
+  ],
   components: {
     securitySchemes: {
       bearerAuth: { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }
